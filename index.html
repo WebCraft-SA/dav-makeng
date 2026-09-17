@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dav Makoro</title>
+
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --card: #15151c;
+      --card-2: #1c1c25;
+      --text: #f5f5f7;
+      --accent: #d8a7b1;
+      --border: rgba(255,255,255,0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          #24202a 0%,
+          var(--bg) 50%
+        );
+
+      color: var(--text);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
+
+      background: rgba(21, 21, 28, 0.96);
+
+      border: 1px solid var(--border);
+      border-radius: 28px;
+
+      padding: 42px 28px;
+
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.45);
+
+      animation: appear 0.6s ease;
+    }
+
+    .greeting {
+      color: var(--accent);
+
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      margin-bottom: 16px;
+
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 30px;
+
+      font-size: clamp(30px, 8vw, 44px);
+
+      line-height: 1.08;
+
+      font-weight: 650;
+
+      letter-spacing: -0.04em;
+
+      text-align: center;
+    }
+
+    .message {
+      padding: 26px;
+
+      background: var(--card-2);
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      color: var(--text);
+
+      font-size: 17px;
+
+      line-height: 1.8;
+
+      text-align: center;
+    }
+
+    .kenna-button {
+      display: block;
+
+      margin: 0 auto 0;
+
+      padding: 13px 28px;
+
+      border: 1px solid var(--accent);
+
+      border-radius: 12px;
+
+      background: transparent;
+
+      color: var(--accent);
+
+      font-size: 15px;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+    }
+
+    .kenna-button:hover {
+      background: var(--accent);
+
+      color: var(--card);
+    }
+
+    .names {
+      display: none;
+
+      margin-top: 24px;
+
+      animation: reveal 0.5s ease;
+    }
+
+    .closing {
+      margin-top: 28px;
+
+      color: var(--accent);
+
+      font-size: 20px;
+
+      font-weight: 600;
+
+      text-align: center;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .card {
+        padding: 34px 20px;
+        border-radius: 24px;
+      }
+
+      .message {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main class="card">
+
+```
+<div class="greeting">
+  Hello
+</div>
+
+<h1>
+  I am Dav Makoro
+</h1>
+
+<div class="message">
+
+  Ke Motlokoa waha Molefe waha Sebedi waha
+  Mankhalefotha le mohla hosahlajwang.
+
+  <br><br>
+
+  <button
+    class="kenna-button"
+    id="kennaButton"
+    type="button"
+  >
+    Kenna
+  </button>
+
+  <div class="names" id="names">
+
+    Kgaitsedi ya Mathapelo le Mamello, Moena wa Thapelo
+
+    <br><br>
+
+    Mora Mahlompho le Kgotso, Malome wa Thuso le Lethabo.
+
+    <br><br>
+
+    Setloholo Kgwakgweng le Tlokweng.
+
+  </div>
+
+</div>
+
+<div class="closing">
+  Keyadumedisa 😁❤️
+</div>
+```
+
+  </main>
+
+  <script>
+    const kennaButton = document.getElementById("kennaButton");
+    const names = document.getElementById("names");
+
+    kennaButton.addEventListener("click", function () {
+      names.style.display = "block";
+      kennaButton.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
